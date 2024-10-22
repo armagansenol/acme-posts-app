@@ -3,7 +3,7 @@ import axios from "axios"
 
 const router = Router()
 
-export const all = router.get("/posts", async (req: Request, res: Response) => {
+export const all = router.get("/", async (req: Request, res: Response) => {
   try {
     const response = await axios.get("https://jsonplaceholder.typicode.com/posts")
     res.json(response.data)
