@@ -1,28 +1,31 @@
+import dotenv from "dotenv"
 import cors from "cors"
 import express from "express"
 import session from "express-session"
-import { initialize } from "./lib/passport-config"
-
-import postsRouter from "./routes/posts"
-import authRouter from "./routes/auth"
 import passport from "passport"
 
+import { initialize } from "./lib/passport-config"
+import authRouter from "./routes/auth"
+import postsRouter from "./routes/posts"
+
+dotenv.config()
+
 const app = express()
-const PORT = 4001
+const PORT = process.env.PORT
 
 app.use(express.urlencoded({ extended: false }))
 app.use(express.json())
 
 app.use(
   cors({
-    origin: "http://localhost:5174",
+    origin: process.env.CLIENT_URL,
     credentials: true,
   })
 )
 
 app.use(
   session({
-    secret: "secretKey",
+    secret: process.env.SESSION_SECRET as string,
     resave: false,
     saveUninitialized: false,
     cookie: {
