@@ -1,4 +1,4 @@
-import axios from "axios"
+import axios, { AxiosError, AxiosResponse } from "axios"
 import { toast } from "sonner"
 
 export const api = axios.create({
@@ -6,38 +6,35 @@ export const api = axios.create({
   withCredentials: true,
 })
 
-api.interceptors.request.use(
-  (config) => {
-    return config
-  },
-  (error) => {
-    return Promise.reject(error)
-  }
-)
+interface ApiErrorResponse {
+  message: string
+}
 
 api.interceptors.response.use(
-  (response) => {
+  (response: AxiosResponse): AxiosResponse => {
     toast.success(response?.data?.message || "Action completed successfully")
     return response
   },
-  (error) => {
-    // const status = error.response?.status
-    toast(error.response.data.message, {
-      action: {
-        label: "X",
-        onClick: () => console.log("Undo"),
-      },
-    })
+  (error: AxiosError<ApiErrorResponse>) => {
+    if (!error.response) {
+      toast.error("Unable to connect to the server. Please check your connection.")
+      return Promise.reject(new Error("Server unreachable"))
+    }
 
-    // if (status === 401) {
-    //   toast.error("Unauthorized. Please log in.")
-    // } else if (status === 403) {
-    //   toast.error("Forbidden. You do not have access.")
-    // } else if (status === 500) {
-    //   toast.error("Server error. Please try again later.")
-    // } else {
-    //   toast.error(error.response?.data?.message || "An error occurred.")
-    // }
+    if (error.response.data && error.response.data.message) {
+      toast(error.response.data.message, {
+        action: {
+          label: "X",
+          onClick: () => console.log("Undo"),
+        },
+      })
+    }
+
+    const status = error.response?.status
+
+    if (status === 500) {
+      toast.error("Server error. Please try again later.")
+    }
 
     return Promise.reject(error)
   }
