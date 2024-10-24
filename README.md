@@ -51,7 +51,7 @@ The project is divided into two main directories:
 
    ```bash
    git clone <https://github.com/armagansenol/acme-posts-app.git>
-   cd your-repository
+   cd acme-posts-app
    ```
 
 2. **Install dependencies**:
