@@ -50,7 +50,7 @@ The project is divided into two main directories:
 1. **Clone the repository**:
 
    ```bash
-   git clone <https://github.com/armagansenol/acme-posts-app.git>
+   git clone https://github.com/armagansenol/acme-posts-app.git
    cd acme-posts-app
    ```
 
@@ -90,7 +90,7 @@ To start the server and client in development mode:
 
    This will run both the client (React) and server (Express) at the same time.
 
-By default, the **server** will run on \`<http://localhost:4000\`> and the **client** on \`<http://localhost:5173\`>.
+By default, the **server** will run on `http://localhost:4000` and the **client** on `http://localhost:5173`.
 
 ### Environment Variables
 
@@ -122,12 +122,12 @@ BASE_URL=http://localhost:5173
 
 ### Parent Directory Scripts
 
-- \`npm run dev\`: Start both the server and the client in development mode concurrently.
+- `npm run dev`: Start both the server and the client in development mode concurrently.
 
 ### Server Scripts
 
-- \`npm run dev\`: Start the server in development mode with auto-restart.
+- `npm run dev`: Start the server in development mode with auto-restart.
 
 ### Client Scripts
 
-- \`npm run dev\`: Start the Vite development server for React.
+- `npm run dev`: Start the Vite development server for React.
