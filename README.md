@@ -98,7 +98,7 @@ Make sure to set up the environment variables for both the server and client bas
 
 #### Server Variables
 
-Create a \`.env\` file in the \`server\` directory to store sensitive configuration such as session secrets.
+Create a `.env` file in the `server` directory to store sensitive configuration such as session secrets.
 
 Example:
 
@@ -110,7 +110,7 @@ CLIENT_URL=http://localhost:5173
 
 #### Client Variables
 
-Create a \`.env\` file in the \`server\` directory to store sensitive configuration such as session secrets.
+Create a `.env` file in the `client` directory to store sensitive configuration such as session secrets.
 
 Example:
 
