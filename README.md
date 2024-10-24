@@ -12,12 +12,12 @@ The project is divided into two main directories:
 
 ### Folder Structure
 
-\`\`\`
+```text
 .
 ├── server/              # Backend code
 ├── client/              # Frontend code
 └── README.md            # Project documentation
-\`\`\`
+```
 
 ## Technologies Used
 
@@ -49,38 +49,43 @@ The project is divided into two main directories:
 ### Installation
 
 1. **Clone the repository**:
-   \`\`\`bash
+
+   ```bash
    git clone <https://github.com/armagansenol/acme-posts-app.git>
    cd your-repository
-   \`\`\`
+   ```
 
 2. **Install dependencies**:
 
    For **Parent Directory**:
-   \`\`\`bash
+
+   ```bash
    npm install
-   \`\`\`
+   ```
 
    For **Server**:
-   \`\`\`bash
+
+   ```bash
    cd server
    npm install
-   \`\`\`
+   ```
 
    For **Client**:
-   \`\`\`bash
+
+   ```bash
    cd client
    npm install
-   \`\`\`
+   ```
 
 ### Running the Server and Client
 
 The parent `package.json` includes scripts to run both the server and the client simultaneously using **concurrently**.
 
 To start the server and client in development mode:
-   \`\`\`bash
+
+   ```bash
    npm run dev
-   \`\`\`
+   ```
 
    This will run both the client (React) and server (Express) at the same time.
 
@@ -95,20 +100,22 @@ Make sure to set up the environment variables for both the server and client bas
 Create a \`.env\` file in the \`server\` directory to store sensitive configuration such as session secrets.
 
 Example:
-\`\`\`
+
+```text
 SESSION_SECRET=your-secret-key
 PORT=4000
 CLIENT_URL=http://localhost:5173
-\`\`\`
+```
 
 #### Client Variables
 
 Create a \`.env\` file in the \`server\` directory to store sensitive configuration such as session secrets.
 
 Example:
-\`\`\`
+
+```text
 BASE_URL=http://localhost:5173
-\`\`\`
+```
 
 ## Scripts
 
