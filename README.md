@@ -131,3 +131,8 @@ BASE_URL=http://localhost:5173
 ### Client Scripts
 
 - `npm run dev`: Start the Vite development server for React.
+
+## App Admin Credentials
+
+username: `admin`
+password: `password123`
