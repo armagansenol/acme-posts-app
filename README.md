@@ -1,5 +1,5 @@
 
-# Full-stack Project
+# Full-stack React and Node.js Project
 
 This project is a full-stack application consisting of a **Node.js/Express server** and a **React frontend** using Vite. The server handles authentication using Passport.js with bcrypt for password hashing, while the frontend uses React for the user interface, along with Tailwind CSS for styling.
 
@@ -13,7 +13,6 @@ The project is divided into two main directories:
 ### Folder Structure
 
 ```text
-.
 ├── server/              # Backend code
 ├── client/              # Frontend code
 └── README.md            # Project documentation
@@ -61,6 +60,8 @@ The project is divided into two main directories:
 
    ```bash
    npm install
+   npm run install:all
+
    ```
 
    For **Server**:
@@ -89,7 +90,7 @@ To start the server and client in development mode:
 
    This will run both the client (React) and server (Express) at the same time.
 
-By default, the **server** will run on \`<http://localhost:4001\`> and the **client** on \`<http://localhost:5173\`>.
+By default, the **server** will run on \`<http://localhost:4000\`> and the **client** on \`<http://localhost:5173\`>.
 
 ### Environment Variables
 
