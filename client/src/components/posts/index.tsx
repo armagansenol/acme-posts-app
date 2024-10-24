@@ -43,7 +43,7 @@ const Posts: React.FC = () => {
               <TableHead className="text-center">Content</TableHead>
             </TableRow>
           </TableHeader>
-          <TableBody className="overflow-hidden h-[500px] max-h-[500px]">
+          <TableBody className="overflow-hidden h-[25vw] max-h-[25vw]">
             {posts.map((post) => (
               <TableRow key={post.id}>
                 <TableCell className="font-medium text-center">{post.id}</TableCell>
